@@ -386,50 +386,50 @@ const SITE = {
         name: "Pre-AKU / Childhood",
         clues: [
           { value: 100, clue: "What is the address of Alinah's childhood house?", answer: "F53 Clifton Block 5" },
-          { value: 200, clue: "What university did AQ go to before AKU? Bonus 100 points if you know the major.", answer: "McMaster. Bonus: Life Sciences." },
+          { value: 200, clue: "Who is Alinah's favourite cousin?", answer: "Maham" },
           { value: 300, clue: "What country was AQ born in?", answer: "The USA" },
-          { value: 400, clue: "What was AQ's first, childhood name?", answer: "Zainab / Zaynah" },
-          { value: 500, clue: "What was Alinah's niche at KGS?", answer: "Math Society (President), and KGMO" }
+          { value: 400, clue: "What university did AQ go to before AKU? Bonus 100 points if you know the major.", answer: "McMaster. Bonus: Life Sciences." },
+          { value: 500, clue: "What was AQ's first, childhood name?", answer: "Zainab / Zaynah" }
         ]
       },
       {
         name: "Current Interests",
         clues: [
-          { value: 100, clue: "What is Alinah's favourite cartoon or anime?", answer: "Avatar" },
-          { value: 200, clue: "What song is Alinah's most played of the summer?", answer: "Janice STFU by Drake" },
+          { value: 100, clue: "What kind of surgery does Alinah want to do?", answer: "Breast. (Half points for vascular.)" },
+          { value: 200, clue: "What is Alinah's favourite cartoon or anime?", answer: "Avatar" },
           { value: 300, clue: "The one country she would go to if she could?", answer: "Japan. (Bali also counts.)" },
-          { value: 400, clue: "What kind of surgery does Alinah want to do?", answer: "Breast. (Half points for vascular.)" },
-          { value: 500, clue: "If Alinah could play one sport for life, what would it be?", answer: "Volleyball. (Squash does not count unless AQ says so.)" }
+          { value: 400, clue: "What song is Alinah's most played of the summer?", answer: "Janice STFU by Drake" },
+          { value: 500, clue: "What does Alinah do these days at 6 AM?", answer: "Plays the piano" }
         ]
       },
       {
         name: "AKU Life",
         clues: [
           { value: 100, clue: "What is AQ most likely to buy from SnT?", answer: "Chaaye or jellies. Either one counts." },
-          { value: 200, clue: "What OTHER colour has Alinah dyed her hair?", answer: "Purple" },
-          { value: 300, clue: "What specialty did Alinah do her electives in Minnesota?", answer: "Orthopedics" },
-          { value: 400, clue: "What does Alinah do these days at 6 AM?", answer: "Plays the piano" },
-          { value: 500, clue: "What has Alinah lost a couple of times at AKU? (+100 if you say both.)", answer: "Jewellery and AirPods" }
+          { value: 200, clue: "What has Alinah lost a couple of times at AKU? (+100 if you say both.)", answer: "Jewellery and AirPods" },
+          { value: 300, clue: "What OTHER colour has Alinah dyed her hair?", answer: "Purple" },
+          { value: 400, clue: "What type of earrings does Alinah like to wear?", answer: "Jhumkas" },
+          { value: 500, clue: "What was Alinah's most drunk drink at electives?", answer: "Celsius" }
         ]
       },
       {
         name: "Likes and Dislikes",
         clues: [
           { value: 100, clue: "What is the only thing Alinah likes shopping for? (+100 if you say both.)", answer: "Snacks and groceries" },
-          { value: 200, clue: "Alinah's favourite Disney princess?", answer: "Mulan" },
-          { value: 300, clue: "What is Alinah's favourite grocery store in Karachi?", answer: "Springs" },
-          { value: 400, clue: "What is Alinah's favourite jelly?", answer: "Jolly Ranchers" },
-          { value: 500, clue: "What was Alinah's comfort meal for the longest time? (+100 if you say both.)", answer: "Sandwich and fries from Milano, and green curry" }
+          { value: 200, clue: "What is Alinah's favourite grocery store in Karachi?", answer: "Springs" },
+          { value: 300, clue: "What is Alinah's favourite imported jelly?", answer: "Jolly Ranchers" },
+          { value: 400, clue: "What was Alinah's go-to comfort meal to order? (+100 if you say both.)", answer: "Sandwich and fries from Milano, and green curry" },
+          { value: 500, clue: "Alinah's favourite Disney princess?", answer: "Mulan" }
         ]
       },
       {
         name: "Random",
         clues: [
-          { value: 100, clue: "What is Alinah's comfort show?", answer: "Parks and Recreation. (The Mentalist these days, so that works too.)" },
-          { value: 200, clue: "What did Alinah collect for the longest time in her life?", answer: "Bags from Liberty Books, 10 rupee notes, or envelopes with things written on them. Any one counts." },
-          { value: 300, clue: "What is AQ's recent favourite perfume?", answer: "Miss Dior. (Just saying Dior gets the points.)" },
-          { value: 400, clue: "Which show has Alinah watched an unreasonable number of times?", answer: "Brooklyn Nine-Nine" },
-          { value: 500, clue: "What surgery did AQ have in 3rd year? +100 points if you can name the surgeon.", answer: "DNS. Bonus: Akbar Abbas." }
+          { value: 100, clue: "What surgery did AQ have in 3rd year? +100 points if you can name the surgeon.", answer: "DNS. Bonus: Akbar Abbas." },
+          { value: 200, clue: "If Alinah could play one sport for life, what would it be?", answer: "Volleyball. (Squash does not count unless AQ says so.)" },
+          { value: 300, clue: "What is Alinah's comfort show to watch?", answer: "Parks and Recreation. (The Mentalist these days, so that works too.)" },
+          { value: 400, clue: "What is AQ's favourite perfume? (Any of them gets the points.)", answer: "Miss Dior, or the Miniso green tea one" },
+          { value: 500, clue: "What did Alinah dress up as for Halloween in 2nd year?", answer: "A pirate" }
         ]
       }
     ]
