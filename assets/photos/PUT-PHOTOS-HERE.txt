@@ -1,0 +1,18 @@
+The 132 photos from the Pictures folder are already in here.
+
+  assets/photos/a001.jpg        full size, opens in the lightbox
+  assets/photos/thumb/a001.jpg  smaller copy, shown in the grid
+
+a001 is primary.jpeg and is also the big portrait on the home page.
+The rest were shuffled on import. PHOTO-MANIFEST.txt in this folder says
+which original file became which slot.
+
+TO ADD MORE: drop the full size file in here and a smaller copy in thumb/
+using the next free number, then add a line to the "photos" list in
+assets/js/data.js:
+
+  { src: "a133", cap: "" },
+
+TO REMOVE ONE: delete its line from that list. The files can stay.
+cap: "" means no hover caption. Type between the quotes to give it one.
+span: 2 makes it a big spotlight tile.
