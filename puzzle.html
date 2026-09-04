@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Puzzle · Alinah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
+<script src="assets/js/gate.js?v=4" data-page-lock="1"></script>
+</head>
+<body data-page="puzzle.html">
+
+<header class="section wrap center" style="padding-bottom:16px;">
+  <p class="eyebrow fade in">Nobody else stands a chance</p>
+  <h1 class="fade in" style="font-size:clamp(2.4rem,6vw,4rem);">The Cryptic Lock</h1>
+  <p class="fade in" id="intro" style="color:var(--muted);max-width:56ch;margin:0 auto;"></p>
+</header>
+
+<section class="wrap" style="padding-bottom:80px;">
+  <div class="puzzle-stage fade in" id="stageBox">
+    <div class="lock-track" id="track"></div>
+    <div class="lockicon" id="lockicon">🔒</div>
+    <p class="clue" id="clue"></p>
+    <form class="puzzle-input" id="form">
+      <input id="answer" autocomplete="off" placeholder="type your answer…" aria-label="answer">
+      <button class="btn" type="submit">Unlock</button>
+    </form>
+    <div class="puzzle-msg" id="msg"></div>
+    <button class="hint-btn" id="hintBtn" type="button">need a hint?</button>
+    <div class="hint-text hidden" id="hint"></div>
+  </div>
+
+  <div class="reward hidden fade" id="reward"></div>
+</section>
+
+<footer class="foot">Made with <span class="heart">♥</span> for Alinah Qureshi</footer>
+
+<script src="assets/js/data.js?v=4"></script>
+<script src="assets/js/main.js?v=4"></script>
+<script>
+  const P=SITE.puzzle;
+  document.getElementById("intro").textContent=P.intro;
+  let idx=0;
+  const norm=s=>s.toLowerCase().replace(/[^a-z0-9]/g,"");
+  const trackEl=document.getElementById("track"),
+        clueEl=document.getElementById("clue"),
+        msgEl=document.getElementById("msg"),
+        hintEl=document.getElementById("hint"),
+        ansEl=document.getElementById("answer"),
+        lockEl=document.getElementById("lockicon");
+
+  function drawTrack(){
+    trackEl.innerHTML=P.stages.map((_,i)=>{
+      let c="pip"; if(i<idx)c+=" done"; else if(i===idx)c+=" current";
+      return `<span class="${c}"></span>`;
+    }).join("");
+  }
+  function loadStage(){
+    drawTrack();
+    const s=P.stages[idx];
+    clueEl.textContent=s.clue;
+    hintEl.textContent=s.hint||"No hint for this one, you've got it.";
+    hintEl.classList.add("hidden");
+    ansEl.value=""; ansEl.focus(); msgEl.textContent=""; msgEl.className="puzzle-msg";
+    lockEl.textContent="🔒";
+  }
+  function win(){
+    document.getElementById("stageBox").classList.add("hidden");
+    const r=document.getElementById("reward");
+    r.innerHTML=`<div style="font-size:2.6rem;margin-bottom:8px;">🔓💛</div>
+      <h2>${P.reward.title}</h2>${P.reward.message.map(m=>`<p>${m}</p>`).join("")}
+      <a class="btn" href="poetry.html" style="margin-top:14px;">Read the poetry →</a>`;
+    r.classList.remove("hidden"); r.classList.add("in");
+    confettiBurst(280);
+  }
+  document.getElementById("form").addEventListener("submit",e=>{
+    e.preventDefault();
+    const s=P.stages[idx];
+    const accepted=[s.answer, ...(s.accept||[])].map(norm);
+    if(accepted.includes(norm(ansEl.value))){
+      lockEl.textContent="🔓";
+      msgEl.textContent="Unlocked. ✨"; msgEl.className="puzzle-msg ok";
+      confettiBurst(90);
+      idx++;
+      setTimeout(()=>{ if(idx>=P.stages.length) win(); else loadStage(); },900);
+    }else{
+      msgEl.textContent="Not quite. Try again, bestie."; msgEl.className="puzzle-msg err";
+      ansEl.focus(); ansEl.select();
+    }
+  });
+  document.getElementById("hintBtn").addEventListener("click",()=>hintEl.classList.toggle("hidden"));
+  loadStage();
+</script>
+</body>
+</html>

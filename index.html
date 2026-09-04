@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday, Alinah 💛</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
+<style>
+  /* tidy placeholder while the hero photo file isn't in assets/photos yet */
+  .hero-photo .ph{aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:6px;text-align:center;padding:24px;border-radius:26px;border:2px dashed var(--gold-soft);
+    background:linear-gradient(180deg,#fff,var(--blush-2));color:var(--muted);font-size:.85rem;line-height:1.6;}
+  .hero-photo .ph b{font-family:var(--serif);font-size:1.2rem;color:var(--rose);}
+</style>
+<script src="assets/js/gate.js?v=4"></script>
+</head>
+<body data-page="index.html">
+
+<header class="hero wrap">
+  <div class="hero-grid">
+    <div class="fade in">
+      <p class="eyebrow" id="eyebrow">A little corner of the internet, just for you</p>
+      <h1 id="greeting">Happy Birthday</h1>
+      <span class="name" id="name">Alinah</span>
+      <p class="sub" id="subtitle"></p>
+      <p class="reason-line">Things I would list under you: <b id="reason">…</b></p>
+      <div class="hero-actions">
+        <button class="btn" id="celebrateBtn">Celebrate 🎉</button>
+        <a class="btn ghost" href="gallery.html">See the photos →</a>
+      </div>
+    </div>
+    <div class="hero-photo fade in">
+      <span class="frame-tape"></span>
+      <img id="heroPhoto" alt="Alinah">
+    </div>
+  </div>
+</header>
+
+<section class="section wrap">
+  <div class="message-card fade" id="messageCard"></div>
+</section>
+
+<section class="section wrap">
+  <div class="center fade">
+    <p class="eyebrow">Sent in for today</p>
+    <h2>Birthday Wishes</h2>
+    <p style="color:var(--muted);max-width:52ch;margin:0 auto 34px;">Everybody had something to say about you. More keep turning up, so this bit gets longer.</p>
+  </div>
+  <div class="wishes fade" id="wishes"></div>
+</section>
+
+<section class="section wrap center fade">
+  <h2>The rest of it</h2>
+  <p style="color:var(--muted);margin-bottom:24px;">Photos, a puzzle, a quiz about you, and some poetry. Any order you like.</p>
+  <div class="hero-actions" style="justify-content:center;">
+    <a class="btn ghost" href="gallery.html">Gallery</a>
+    <a class="btn ghost" href="puzzle.html">Puzzle</a>
+    <a class="btn ghost" href="jeopardy.html">Jeopardy</a>
+    <a class="btn ghost" href="poetry.html">Poetry</a>
+  </div>
+</section>
+
+<footer class="foot">Made with <span class="heart">♥</span> for Alinah Qureshi</footer>
+
+<script src="assets/js/data.js?v=4"></script>
+<script src="assets/js/main.js?v=4"></script>
+<script>
+  // Fill hero
+  document.getElementById("greeting").textContent = SITE.heroGreeting;
+  document.getElementById("name").textContent = SITE.name;
+  document.getElementById("subtitle").textContent = SITE.heroSubtitle;
+  document.getElementById("heroPhoto").src = SITE.heroPhoto;
+  document.getElementById("heroPhoto").alt = SITE.fullName;
+  (function(){
+    const hp = document.getElementById("heroPhoto");
+    function heroMissing(){
+      if(!hp.parentNode) return;
+      hp.outerHTML = '<div class="ph"><b>' + SITE.fullName + '</b>Add ' + SITE.heroPhoto + '</div>';
+    }
+    hp.addEventListener("error", heroMissing);
+    if(hp.complete && hp.naturalWidth === 0) heroMissing();
+  })();
+
+  // Message card
+  document.getElementById("messageCard").innerHTML =
+    SITE.birthdayMessage.map((p,i)=> i===SITE.birthdayMessage.length-1
+      ? `<p class="sign">${p}</p>` : `<p>${p}</p>`).join("");
+
+  // Wishes
+  document.getElementById("wishes").innerHTML = SITE.wishes.map(w=>
+    `<div class="wish${w.text.length>200?" long":""}"><p>${w.text}</p>${w.from?`<div class="who">${w.from}</div>`:""}</div>`).join("");
+
+  // Rotating reasons
+  let ri=0; const rEl=document.getElementById("reason");
+  function rotateReason(){
+    rEl.style.opacity=0;
+    setTimeout(()=>{ rEl.textContent=SITE.reasons[ri%SITE.reasons.length]; rEl.style.opacity=1; ri++; },350);
+  }
+  rEl.style.transition="opacity .35s"; rotateReason(); setInterval(rotateReason,2600);
+
+  // Celebrate button + auto burst on load
+  document.getElementById("celebrateBtn").addEventListener("click",()=>confettiBurst(220));
+  window.addEventListener("load",()=>setTimeout(()=>confettiBurst(160),600));
+
+  // Easter egg: click the hero photo 5x for extra confetti
+  let clicks=0;
+  document.getElementById("heroPhoto").addEventListener("click",()=>{ if(++clicks>=5){confettiBurst(300);clicks=0;} });
+
+</script>
+</body>
+</html>

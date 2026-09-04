@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alinah! · Jeopardy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
+<script src="assets/js/gate.js?v=4"></script>
+<style>
+  .jimg{margin:0 auto 18px;max-width:100%;}
+  .jimg img{max-height:44vh;width:auto;max-width:100%;border-radius:16px;border:4px solid #fff;
+    box-shadow:0 18px 44px rgba(0,0,0,.45);margin:0 auto;}
+  .jimg .ph{background:rgba(255,255,255,.08);border:2px dashed var(--gold-soft);border-radius:16px;
+    padding:34px 18px;color:var(--gold-soft);font-family:var(--sans);font-size:.95rem;line-height:1.6;}
+  .jimg .ph b{font-family:var(--display);font-size:1.2rem;display:block;margin-bottom:6px;}
+
+  /* setup */
+  .setup{max-width:660px;margin:0 auto;background:linear-gradient(180deg,#fff,#fffaf8);
+    border-radius:var(--radius);padding:clamp(28px,4.4vw,46px);
+    box-shadow:var(--shadow);border:1px solid rgba(195,154,74,.24);text-align:center;
+    position:relative;overflow:hidden;}
+  .setup::after{content:"";position:absolute;inset:0 0 auto 0;height:4px;
+    background:linear-gradient(90deg,var(--gold-soft),var(--rose),var(--gold-soft));}
+  .count-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0 6px;}
+  .count-btn{width:66px;height:66px;border-radius:18px;border:2px solid var(--gold-soft);background:#fff;
+    font-family:var(--display);font-size:1.7rem;color:var(--wine);cursor:pointer;
+    transition:transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);}
+  .count-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--rose);}
+  .count-btn.sel{background:linear-gradient(140deg,var(--wine),var(--plum));color:#fff;border-color:transparent;
+    box-shadow:0 14px 28px -16px rgba(78,19,48,.9);}
+  .name-inputs{display:grid;gap:12px;margin:22px 0;text-align:left;}
+  .name-inputs label{font-size:.78rem;color:var(--muted);display:block;text-transform:uppercase;letter-spacing:.14em;}
+  .name-inputs input{width:100%;padding:12px 18px;border-radius:14px;border:1.5px solid var(--gold-soft);
+    background:#fff;outline:none;font-size:1rem;font-family:var(--sans);transition:.25s var(--ease);}
+  .name-inputs input:focus{border-color:var(--rose);box-shadow:var(--ring);}
+
+  /* teams scoreboard */
+  .teams{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+  .team{background:#fff;border:2px solid var(--gold-soft);border-radius:20px;padding:12px 18px 10px;
+    min-width:140px;text-align:center;box-shadow:var(--shadow-sm);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);}
+  .team.active{border-color:var(--rose);box-shadow:0 0 0 4px rgba(209,88,122,.16),var(--shadow-sm);transform:translateY(-4px);}
+  .team .tname{font-family:var(--display);color:var(--wine);font-size:1.05rem;line-height:1.3;}
+  .team.active .tname{color:var(--rose);}
+  .team .tscore{
+    width:100%;border:0;background:transparent;text-align:center;
+    font-family:var(--display);font-size:1.8rem;color:var(--rose);font-weight:700;
+    padding:2px 0;border-radius:10px;outline:none;-moz-appearance:textfield;
+    transition:background .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .team .tscore::-webkit-outer-spin-button,.team .tscore::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+  .team .tscore:hover{background:var(--blush-2);}
+  .team .tscore:focus{background:#fff;box-shadow:var(--ring);}
+  .team .tedit{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.75;}
+  .turn-note{text-align:center;color:var(--plum);font-family:var(--serif);font-size:1.4rem;margin:8px 0 20px;}
+  .turn-note b{color:var(--rose);}
+  .jturn{color:var(--gold-soft);font-family:var(--sans);font-size:.95rem;margin-bottom:6px;letter-spacing:.04em;}
+</style>
+</head>
+<body data-page="jeopardy.html">
+
+<header class="section wrap center" style="padding-bottom:20px;">
+  <p class="eyebrow fade in">This is</p>
+  <h1 class="fade in" style="font-size:clamp(2.6rem,7vw,4.4rem);">Alinah!</h1>
+  <p class="fade in" id="intro" style="color:var(--muted);max-width:56ch;margin:0 auto;"></p>
+</header>
+
+<!-- SETUP -->
+<section class="wrap" id="setupWrap" style="padding-bottom:80px;">
+  <div class="setup fade in">
+    <h2 style="margin-bottom:.2em;">Set up the game</h2>
+    <p style="color:var(--muted);margin:0;">How many teams are playing?</p>
+    <div class="count-row" id="countRow"></div>
+    <div class="name-inputs" id="nameInputs"></div>
+    <button class="btn" id="startBtn">Start game 🎉</button>
+  </div>
+</section>
+
+<!-- GAME -->
+<section class="wrap hidden" id="gameWrap" style="padding-bottom:80px;">
+  <div class="teams" id="teams"></div>
+  <div class="turn-note" id="turnNote"></div>
+  <div class="scorebar fade in" style="margin-bottom:18px;">
+    <button class="btn ghost" id="newGameBtn" type="button">New game / change teams</button>
+  </div>
+  <div class="board" id="board"></div>
+</section>
+
+<footer class="foot">Made with <span class="heart">♥</span> for Alinah Qureshi</footer>
+
+<div class="jmodal" id="modal">
+  <div class="jcard">
+    <div class="jturn" id="jturn"></div>
+    <div class="jval" id="jval"></div>
+    <div class="jimg" id="jimg"></div>
+    <div class="jclue" id="jclue"></div>
+    <div class="janswer" id="janswer"></div>
+    <div class="jbtns" id="jbtns"></div>
+  </div>
+</div>
+
+<script src="assets/js/data.js?v=4"></script>
+<script src="assets/js/main.js?v=4"></script>
+<script>
+  const J = SITE.jeopardy;
+  document.getElementById("intro").textContent = J.intro;
+  const cats = J.categories;
+  const rows = Math.max(...cats.map(c => c.clues.length));
+
+  /* ---------- Setup ---------- */
+  let teamCount = 2;
+  const countRow = document.getElementById("countRow");
+  const nameInputs = document.getElementById("nameInputs");
+  [1,2,3,4].forEach(n=>{
+    const b=document.createElement("button");
+    b.className="count-btn"+(n===teamCount?" sel":"");
+    b.textContent=n; b.onclick=()=>{teamCount=n; renderCount(); renderNameInputs();};
+    countRow.appendChild(b);
+  });
+  function renderCount(){ [...countRow.children].forEach((b,i)=>b.classList.toggle("sel", i+1===teamCount)); }
+  function renderNameInputs(){
+    nameInputs.innerHTML="";
+    for(let i=0;i<teamCount;i++){
+      const wrap=document.createElement("div");
+      wrap.innerHTML=`<label>Team ${i+1} name</label>
+        <input type="text" id="tname${i}" value="Team ${i+1}" maxlength="24">`;
+      nameInputs.appendChild(wrap);
+    }
+  }
+  renderNameInputs();
+
+  let teams=[], current=0;
+  document.getElementById("startBtn").onclick=()=>{
+    teams=[];
+    for(let i=0;i<teamCount;i++){
+      const el=document.getElementById("tname"+i);
+      teams.push({ name:(el && el.value.trim()) || ("Team "+(i+1)), score:0 });
+    }
+    current=0;
+    document.getElementById("setupWrap").classList.add("hidden");
+    document.getElementById("gameWrap").classList.remove("hidden");
+    renderBoard(); buildTeams();
+    window.scrollTo({top:0, behavior:"smooth"});
+  };
+  document.getElementById("newGameBtn").onclick=()=>{
+    document.getElementById("gameWrap").classList.add("hidden");
+    document.getElementById("setupWrap").classList.remove("hidden");
+  };
+
+  /* ---------- Board ---------- */
+  const board=document.getElementById("board");
+  function renderBoard(){
+    let html="";
+    cats.forEach(c=>html+=`<div class="cat">${c.name}</div>`);
+    for(let r=0;r<rows;r++){
+      cats.forEach((c,ci)=>{
+        const clue=c.clues[r];
+        html+= clue
+          ? `<button class="cell" data-c="${ci}" data-r="${r}">${clue.value}</button>`
+          : `<div class="cell used"></div>`;
+      });
+    }
+    board.innerHTML=html;
+  }
+
+  const teamsEl = document.getElementById("teams");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  // Built once per game. Scores are inputs, so you can just type over them.
+  function buildTeams(){
+    teamsEl.innerHTML = teams.map((t,i)=>
+      `<div class="team ${i===current?'active':''}" data-i="${i}">
+         <div class="tname">${esc(t.name)}</div>
+         <input class="tscore" type="number" step="50" value="${t.score}" aria-label="${esc(t.name)} score">
+         <div class="tedit">tap to edit</div>
+       </div>`).join("");
+    teamsEl.querySelectorAll(".tscore").forEach(inp=>{
+      inp.addEventListener("focus",()=>inp.select());
+      inp.addEventListener("input",()=>{
+        const i=+inp.closest(".team").dataset.i;
+        const v=parseInt(inp.value,10);
+        teams[i].score = isNaN(v) ? 0 : v;
+      });
+      inp.addEventListener("blur",()=>{
+        const i=+inp.closest(".team").dataset.i;
+        inp.value = teams[i].score;
+      });
+      inp.addEventListener("keydown",e=>{ if(e.key==="Enter") inp.blur(); });
+    });
+    renderTeams();
+  }
+
+  // Refreshes scores and whose turn it is without touching a score you're editing.
+  function renderTeams(){
+    teamsEl.querySelectorAll(".team").forEach(el=>{
+      const i=+el.dataset.i;
+      el.classList.toggle("active", i===current);
+      const inp=el.querySelector(".tscore");
+      if(document.activeElement!==inp) inp.value=teams[i].score;
+    });
+    document.getElementById("turnNote").innerHTML =
+      teams.length>1 ? `<b>${esc(teams[current].name)}</b>, you're up. Pick a tile.`
+                     : `Pick a tile. Scores can be typed straight into the box.`;
+  }
+
+  /* ---------- Modal / play ---------- */
+  const modal=document.getElementById("modal");
+  const jturn=document.getElementById("jturn"), jval=document.getElementById("jval"),
+        jclue=document.getElementById("jclue"), janswer=document.getElementById("janswer"),
+        jbtns=document.getElementById("jbtns"), jimg=document.getElementById("jimg");
+  let active=null;
+
+  board.addEventListener("click",e=>{
+    const cell=e.target.closest(".cell"); if(!cell||cell.classList.contains("used"))return;
+    const ci=+cell.dataset.c, r=+cell.dataset.r;
+    active={cell, clue:cats[ci].clues[r]};
+    openClue(active.clue);
+  });
+
+  function openClue(clue){
+    jturn.textContent = teams.length>1 ? (teams[current].name + "'s turn") : "";
+    jval.textContent = "$"+clue.value;
+    if(clue.img){
+      jimg.innerHTML = `<img src="${clue.img}" alt="mystery city"
+        onerror="this.parentNode.innerHTML='&lt;div class=\\'ph\\'&gt;&lt;b&gt;📷 Photo goes here&lt;/b&gt;Drop &lt;code&gt;'+this.src.split('/').pop()+'&lt;/code&gt; into assets/jeopardy&lt;/div&gt;'">`;
+    } else { jimg.innerHTML=""; }
+    jclue.textContent = clue.clue;
+    janswer.textContent = clue.answer;
+    janswer.classList.remove("show");
+    jbtns.innerHTML = `<button class="btn" id="revealBtn">Reveal answer</button>`;
+    modal.classList.add("open");
+    document.getElementById("revealBtn").onclick = reveal;
+  }
+  function reveal(){
+    janswer.classList.add("show");
+    const v=active.clue.value;
+    if(teams.length>1){
+      jbtns.innerHTML =
+        `<button class="btn correct" id="gotIt">${teams[current].name} got it +${v}</button>
+         <button class="btn wrong" id="missed">Wrong −${v}</button>
+         <button class="btn ghost" id="skip">No one / skip</button>`;
+    } else {
+      jbtns.innerHTML =
+        `<button class="btn correct" id="gotIt">Got it +${v}</button>
+         <button class="btn wrong" id="missed">Missed −${v}</button>
+         <button class="btn ghost" id="skip">Skip</button>`;
+    }
+    document.getElementById("gotIt").onclick=()=>finish(v);
+    document.getElementById("missed").onclick=()=>finish(-v);
+    document.getElementById("skip").onclick=()=>finish(0);
+  }
+  function finish(delta){
+    teams[current].score += delta;
+    active.cell.classList.add("used"); active.cell.textContent="";
+    modal.classList.remove("open");
+    if(delta>0) confettiBurst(70);
+    // rotate turn
+    if(teams.length>1) current=(current+1)%teams.length;
+    renderTeams();
+    // board complete?
+    if([...board.querySelectorAll(".cell")].every(c=>c.classList.contains("used"))) endGame();
+  }
+  function endGame(){
+    setTimeout(()=>{
+      confettiBurst(280);
+      const sorted=[...teams].sort((a,b)=>b.score-a.score);
+      const top=sorted[0].score;
+      const winners=sorted.filter(t=>t.score===top).map(t=>t.name);
+      const line = winners.length>1 ? ("It's a tie: "+winners.join(" & ")) : ("Winner: "+winners[0]);
+      const scores = sorted.map(t=>`${t.name}: ${t.score}`).join("\n");
+      alert("That's the whole board! 🎉\n\n"+line+"\n\n"+scores+"\n\nHappy birthday, Alinah!");
+    },400);
+  }
+  modal.addEventListener("click",e=>{ if(e.target===modal) modal.classList.remove("open"); });
+</script>
+</body>
+</html>
