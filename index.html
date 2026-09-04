@@ -65,7 +65,7 @@
 
 <footer class="foot">Made with <span class="heart">♥</span> for Alinah Qureshi</footer>
 
-<script src="assets/js/data.js?v=4"></script>
+<script src="assets/js/data.js?v=5"></script>
 <script src="assets/js/main.js?v=4"></script>
 <script>
   // Fill hero
@@ -90,8 +90,11 @@
       ? `<p class="sign">${p}</p>` : `<p>${p}</p>`).join("");
 
   // Wishes
-  document.getElementById("wishes").innerHTML = SITE.wishes.map(w=>
-    `<div class="wish${w.text.length>200?" long":""}"><p>${w.text}</p>${w.from?`<div class="who">${w.from}</div>`:""}</div>`).join("");
+  document.getElementById("wishes").innerHTML = SITE.wishes.map(w=>{
+    // a \n in a wish starts a new paragraph inside the same card
+    const body = w.text.split("\n").map(line=>`<p>${line}</p>`).join("");
+    return `<div class="wish${w.text.length>200?" long":""}">${body}${w.from?`<div class="who">${w.from}</div>`:""}</div>`;
+  }).join("");
 
   // Rotating reasons
   let ri=0; const rEl=document.getElementById("reason");
