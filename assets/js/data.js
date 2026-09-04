@@ -47,27 +47,22 @@ const SITE = {
      The written ones come first, then the short ones.
      ADD MORE by copying a { ... } block. Leave 'from' blank for anonymous. */
   wishes: [
-    // Longest first, so the big ones fill the top row and the short ones tuck in under them.
+    // Ordered longest to shortest. Anything over 200 characters takes a
+    // double-width card, so the written-out ones lead the wall.
+    // A \n in the text starts a new paragraph inside the same card.
+    { from: "Noor", text: "Happy birthday Alinah ❤️❤️\nCan’t believe I’ve known you for the past 5 years and that we’ve made SO many core memories together. From laughing so hard when we almost missed our flight back to Khi, to you being my most favourite CP throughout med school !! I genuinely didnt vibe this much w any other cp of mine. I know you’re going to raise the bar for surgeons because not only will you be absolutely spectacular at work, but you’ll also know how to actually enjoy life outside the hospital (hopefully). I love you so much and I’m so lucky to have come across you (smth good came out of AKU). Here’s to so many more memories & laughters together. And I better see you DANCING at my mehendi!!! 💃🏻😭" },
+    { from: "Laiba", text: "Happy Birthday, Alinah! 💗 We’ve been friends since Foundation, and it’s honestly been one long ride. There have been times when we were super close and times when we weren’t, but through it all, you’ve been a part of some of my most special memories at med school. I hope you always keep smiling and that your smile stays as bright as your pink hair! 💕 Wishing you the happiest birthday and an amazing year ahead! 🩷" },
     { from: "Mama", text: "Happy birthday, my darling! I honestly don’t know how you grew up so fast when I clearly wasn’t ready for it! 😂. Watching you grow into the person you are today has been one of the greatest joys of my life. I hope life always brings you happiness, love, laughter, and everything your heart desires. You are so deeply loved, more than you will ever know, and I’m so lucky and grateful to be your mamma ❤️" },
+    { from: "Naimal", text: "happy birthday alinah! you have a big heart that holds a lot of love and care for people around her and thats my favourite thing about you. and i hope that thoughtfulness is the one thing u hold close and not let go of as life goes on. i pray ur life is full of unconditional love and laughter, thank you for being u 💛" },
     { from: "Fiza Adnan", text: "Happpppppy birthday AQ ❤️💕🤍🙏🏻 may you have many many more! you are genuinely such a gem person, with how you conduct yourself, your humour and the amount of love and genuine care you have for those close to you. You a boss lady n always remember that" },
-    { from: "Sophie", text: "Happy Birthday Alinah Api! Love Sophie" },
-    { from: "Daniyal", text: "Happy Birthday Api, love Daniyal" },
+    { from: "Fariz", text: "Happy birthdayyy Alinah, Another year older, but thankfully still not mature :) Wishing you lots of happiness and success. Stay the same crazy person you’ve always been!" },
+    { from: "Sheza", text: "Happiest birthday to Aq🥰😘 wishing u a year full of cookies croissants and strawberry dessert. Cant wait to see u be a kickass surgeon iA" },
 
-    { from: "Noor", text: "Happiest birthday, you deserve the whole day." },
-    { from: "Umer", text: "Happy birthday. Wishing you all the good stuff 💛" },
-    { from: "Aleena", text: "Happy birthday Alinah 🥳 have a good one!" },
-    { from: "Hassan Naseer", text: "Happy birthday! Hope it is a great day." },
-    { from: "Humza", text: "Happy birthday! Eat cake for me too 🍰" },
-    { from: "Hamna", text: "Happy birthday to the sweetest one ✨" },
     { from: "Musa", text: "Happy birthday! Wishing you a big year." },
-    { from: "Fariz", text: "Happy birthday, enjoy every bit of it." },
-    { from: "Saniya", text: "Many happy returns, Alinah 🤍" },
-    { from: "Sheza Saqib", text: "Happy birthday Alinah! 🎂" },
-    { from: "Laiba", text: "Happiest birthday Alinah 💕" },
-    { from: "Basit", text: "Happy birthday Alinah 🎉" },
-    { from: "Tommy", text: "Have the best one. Happy birthday!" },
-    { from: "Naimal", text: "Happy birthday Alinah 🎈🎈" },
-    { from: "Sohaib", text: "Happy birthday Alinah! 🙌" }
+    { from: "Hassan Naseer", text: "Happy birthday! Hope it is a great day." },
+    { from: "Sophie", text: "Happy Birthday Alinah Api! Love Sophie" },
+    { from: "Humza", text: "Happy birthday! Eat cake for me too 🍰" },
+    { from: "Daniyal", text: "Happy Birthday Api, love Daniyal" }
   ],
 
   /* ---------- Gallery: the photos ----------
