@@ -1,0 +1,134 @@
+Which original file became which slot (import was shuffled).
+
+a001.jpg  <-  primary.jpeg
+a002.jpg  <-  WhatsApp Image 2026-09-02 at 16.44.09 (1).jpeg
+a003.jpg  <-  WhatsApp Image 2026-09-02 at 17.02.43 (3).jpeg
+a004.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.28 (2).jpeg
+a005.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (1).jpeg
+a006.jpg  <-  WhatsApp Image 2026-08-24 at 22.04.13 (1).jpeg
+a007.jpg  <-  WhatsApp Image 2026-09-03 at 01.17.50 (2).jpeg
+a008.jpg  <-  WhatsApp Image 2026-09-02 at 16.58.43.jpeg
+a009.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.05 (1).jpeg
+a010.jpg  <-  WhatsApp Image 2026-09-02 at 17.02.44.jpeg
+a011.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.46.jpeg
+a012.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.06 (1).jpeg
+a013.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.17.jpeg
+a014.jpg  <-  WhatsApp Image 2026-09-04 at 11.04.00.jpeg
+a015.jpg  <-  WhatsApp Image 2026-09-02 at 17.02.43 (4).jpeg
+a016.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.47.jpeg
+a017.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.25.jpeg
+a018.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (4).jpeg
+a019.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (9).jpeg
+a020.jpg  <-  WhatsApp Image 2026-09-03 at 01.17.50 (1).jpeg
+a021.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.48 (1).jpeg
+a022.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.25 (1).jpeg
+a023.jpg  <-  WhatsApp Image 2026-08-24 at 21.49.08 (1).jpeg
+a024.jpg  <-  WhatsApp Image 2026-09-02 at 15.49.37 (1).jpeg
+a025.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00.jpeg
+a026.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.27 (1).jpeg
+a027.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.48 (2).jpeg
+a028.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.17 (1).jpeg
+a029.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.06.jpeg
+a030.jpg  <-  WhatsApp Image 2026-09-02 at 16.58.43 (1).jpeg
+a031.jpg  <-  WhatsApp Image 2026-09-04 at 11.03.59.jpeg
+a032.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.48.jpeg
+a033.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.37 (2).jpeg
+a034.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.35 (1).jpeg
+a035.jpg  <-  WhatsApp Image 2026-09-02 at 17.02.43.jpeg
+a036.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.19.jpeg
+a037.jpg  <-  WhatsApp Image 2026-08-24 at 21.49.08.jpeg
+a038.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.40.jpeg
+a039.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.07.jpeg
+a040.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.06 (3).jpeg
+a041.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.47 (1).jpeg
+a042.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.54 (1).jpeg
+a043.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.36 (1).jpeg
+a044.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.33.jpeg
+a045.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.44 (1).jpeg
+a046.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.28 (1).jpeg
+a047.jpg  <-  WhatsApp Image 2026-09-02 at 21.31.02.jpeg
+a048.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.47 (2).jpeg
+a049.jpg  <-  WhatsApp Image 2026-09-02 at 16.58.49 (1).jpeg
+a050.jpg  <-  WhatsApp Image 2026-09-03 at 01.17.50.jpeg
+a051.jpg  <-  WhatsApp Image 2026-09-02 at 16.32.28.jpeg
+a052.jpg  <-  WhatsApp Image 2026-09-04 at 11.03.57.jpeg
+a053.jpg  <-  WhatsApp Image 2026-08-24 at 22.04.13.jpeg
+a054.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.26.jpeg
+a055.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.35 (1).jpeg
+a056.jpg  <-  WhatsApp Image 2026-09-02 at 21.27.25.jpeg
+a057.jpg  <-  WhatsApp Image 2026-09-02 at 16.44.09 (3).jpeg
+a058.jpg  <-  WhatsApp Image 2026-09-02 at 17.02.43 (1).jpeg
+a059.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.18 (2).jpeg
+a060.jpg  <-  WhatsApp Image 2026-08-24 at 22.18.23.jpeg
+a061.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.28 (3).jpeg
+a062.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.28.jpeg
+a063.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.35.jpeg
+a064.jpg  <-  WhatsApp Image 2026-09-02 at 21.30.27.jpeg
+a065.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.17 (2).jpeg
+a066.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.26 (2).jpeg
+a067.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.28.jpeg
+a068.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.54.jpeg
+a069.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.44 (3).jpeg
+a070.jpg  <-  WhatsApp Image 2026-09-02 at 21.25.36.jpeg
+a071.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (7).jpeg
+a072.jpg  <-  WhatsApp Image 2026-09-02 at 17.02.43 (2).jpeg
+a073.jpg  <-  WhatsApp Image 2026-09-02 at 21.38.55.jpeg
+a074.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.44 (2).jpeg
+a075.jpg  <-  WhatsApp Image 2026-09-03 at 21.37.24.jpeg
+a076.jpg  <-  WhatsApp Image 2026-09-03 at 21.37.23.jpeg
+a077.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.55 (1).jpeg
+a078.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.01.jpeg
+a079.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.36 (2).jpeg
+a080.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (3).jpeg
+a081.jpg  <-  WhatsApp Image 2026-09-02 at 21.33.17.jpeg
+a082.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.21.jpeg
+a083.jpg  <-  WhatsApp Image 2026-09-04 at 11.03.55.jpeg
+a084.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (5).jpeg
+a085.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.27 (2).jpeg
+a086.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.38.jpeg
+a087.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.44.jpeg
+a088.jpg  <-  WhatsApp Image 2026-09-02 at 21.24.32.jpeg
+a089.jpg  <-  WhatsApp Image 2026-09-02 at 16.58.49.jpeg
+a090.jpg  <-  WhatsApp Image 2026-09-02 at 15.49.36.jpeg
+a091.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.30.jpeg
+a092.jpg  <-  WhatsApp Image 2026-09-02 at 16.58.49 (2).jpeg
+a093.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.29.jpeg
+a094.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.06 (2).jpeg
+a095.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.56.jpeg
+a096.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (8).jpeg
+a097.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.39.jpeg
+a098.jpg  <-  WhatsApp Image 2026-08-24 at 21.54.55.jpeg
+a099.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.07 (1).jpeg
+a100.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.53.jpeg
+a101.jpg  <-  WhatsApp Image 2026-09-03 at 01.17.49.jpeg
+a102.jpg  <-  WhatsApp Image 2026-09-02 at 15.54.47 (3).jpeg
+a103.jpg  <-  WhatsApp Image 2026-09-02 at 21.27.11.jpeg
+a104.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.26 (1).jpeg
+a105.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.27.jpeg
+a106.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.38.jpeg
+a107.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.07 (2).jpeg
+a108.jpg  <-  WhatsApp Image 2026-09-02 at 15.49.53.jpeg
+a109.jpg  <-  WhatsApp Image 2026-09-02 at 16.44.09.jpeg
+a110.jpg  <-  WhatsApp Image 2026-08-24 at 22.16.50.jpeg
+a111.jpg  <-  WhatsApp Image 2026-09-02 at 21.29.19.jpeg
+a112.jpg  <-  WhatsApp Image 2026-09-02 at 16.44.09 (2).jpeg
+a113.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.18 (1).jpeg
+a114.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.35.jpeg
+a115.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (2).jpeg
+a116.jpg  <-  WhatsApp Image 2026-09-02 at 17.05.37.jpeg
+a117.jpg  <-  WhatsApp Image 2026-09-02 at 15.49.37.jpeg
+a118.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.53 (1).jpeg
+a119.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.36.jpeg
+a120.jpg  <-  WhatsApp Image 2026-08-18 at 11.08.05.jpeg
+a121.jpg  <-  WhatsApp Image 2026-08-18 at 11.26.27 (3).jpeg
+a122.jpg  <-  WhatsApp Image 2026-09-02 at 16.40.18.jpeg
+a123.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.37 (1).jpeg
+a124.jpg  <-  WhatsApp Image 2026-09-03 at 19.18.12.jpeg
+a125.jpg  <-  WhatsApp Image 2026-09-02 at 18.32.55.jpeg
+a126.jpg  <-  WhatsApp Image 2026-08-25 at 20.40.49.jpeg
+a127.jpg  <-  WhatsApp Image 2026-09-02 at 16.44.08.jpeg
+a128.jpg  <-  WhatsApp Image 2026-09-02 at 21.23.01.jpeg
+a129.jpg  <-  WhatsApp Image 2026-09-02 at 16.58.48.jpeg
+a130.jpg  <-  WhatsApp Image 2026-09-02 at 18.14.37.jpeg
+a131.jpg  <-  WhatsApp Image 2026-09-02 at 16.33.00 (6).jpeg
+a132.jpg  <-  WhatsApp Image 2026-08-25 at 20.40.49 (1).jpeg
